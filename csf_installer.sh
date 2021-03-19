@@ -307,6 +307,6 @@ case "$1" in
     uninstall
     ;;
   *)
-    echo "$0 {install|uninstall}"
+    echo "$0 {--install|-i|--uninstall|-u}"
     ;;
 esac
