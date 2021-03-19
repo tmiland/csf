@@ -34,7 +34,7 @@ $ ./csf_installer.sh install
 Or directly
 
 ```bash
-$ curl -sSL https://github.com/tmiland/csf/raw/master/csf_installer.sh | bash
+$ curl -sSL https://github.com/tmiland/csf/raw/master/csf_installer.sh install | bash
 ```
 
 * Webmin module will be installed automatically if Webmin is installed.
