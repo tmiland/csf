@@ -39,12 +39,23 @@
 #set -o xtrace
 # Variable definitions
 DIR=$(cd "$(dirname $0)" && pwd)
+SCRIPT_FILENAME=$(basename "$0")
 NAME="ConfigServer Security & Firewall"
 SLUG="csf"
 DEPENDENCIES=("perl" "tar")
 TMP="/tmp/$SLUG"
 INSTALL_LOG="$TMP/install.log"
 ERROR_LOG="$TMP/error.log"
+
+## Checking root access
+if [[ "$EUID" != 0 ]]; then
+  echo -e "This action needs root permissions."
+  echo -e "Please enter your root password...";
+  cd "$DIR" || exit
+  su -s "$(which bash)" -c "./$SCRIPT_FILENAME $1"
+  cd - > /dev/null || exit
+  exit 0; 
+fi
 
 # Cleaning up
 rm -rf $TMP
@@ -174,11 +185,6 @@ trap ctrl_c INT
 
 csf_install() {
   # Basic checks
-
-  ## Checking root access
-  if [ $EUID -ne 0 ]; then
-    ee "This script needs root permissions!"
-  fi
 
   ## Check for wget or curl or fetch
   e "Checking for HTTP client..."
