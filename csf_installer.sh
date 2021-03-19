@@ -48,8 +48,13 @@ INSTALL_LOG="$TMP/install.log"
 ERROR_LOG="$TMP/error.log"
 
 ## Checking root access
-if [ $EUID -ne 0 ]; then
-  ee "This script needs root permissions!"
+if [[ "$EUID" != 0 ]]; then
+  echo -e "This action needs root permissions."
+  echo -e "Please enter your root password...";
+  cd "$DIR" || exit
+  su -s "$(which bash)" -c "./$SCRIPT_FILENAME $1"
+  cd - > /dev/null || exit
+  exit 0; 
 fi
 
 # Cleaning up
