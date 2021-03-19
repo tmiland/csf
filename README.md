@@ -1,7 +1,7 @@
-# ConfigServer Security & Firewall
+# [<img src="https://github.com/tmiland/csf/raw/master/img/csf_firewall.png?sanitize=true" height="64" width="128">](https://github.com/tmiland/csf/raw/master/img/csf_firewall.png?sanitize=true) ConfigServer Security & Firewall (csf)
 ================================
 
-Install ConfigServer Security & Firewall
+Install ConfigServer Security & Firewall (csf)
 
 Installs all dependencies using apt or yum
 
@@ -49,3 +49,7 @@ You may find some error messages in the log about ```apf```. If you don't know w
 For further info check [Official website](http://configserver.com/cp/csf.html) or [Installation notes](https://download.configserver.com/csf/install.txt)
 
 [changelog](https://download.configserver.com/csf/changelog.txt)
+
+## Credits
+
+Forked from [installation](https://github.com/installation/csf)
