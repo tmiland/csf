@@ -1,4 +1,4 @@
-ConfigServer Security & Firewall
+# ConfigServer Security & Firewall
 ================================
 
 Install ConfigServer Security & Firewall
@@ -6,38 +6,46 @@ Install ConfigServer Security & Firewall
 Installs all dependencies using apt or yum
 
 Tested on:
-* CentOS 5.8/6.4
-* Debian 6.0/7.0
-* Fedora 17
-* Ubuntu 10.04/12.04/12.10
+* CentOS 8
+* Debian 10
+* Fedora 33
+* Ubuntu 18.10
 
-Default temp dir is ````/tmp/csf````, this can be changed in install script.
+Default temp dir is ```/tmp/csf```, this can be changed in install script.
 
-By default, the installer logs into ````$TMP/install.log```` and ````$TMP/error.log````. Check these for further info about the installation process.
+By default, the installer logs into ```$TMP/install.log``` and ```$TMP/error.log```. Check these for further info about the installation process.
 
 ## Dependencies
 * Package manager (apt or yum)
 * HTTP Client (curl, wget or fetch)
 * TAR executable
 * Perl
-* Perl GD library (Debian/Ubuntu: libgd-graph-perl, RHEL: perl-GDGraph)
+* Perl modules: (Debian/Ubuntu: ```libwww-perl liblwp-protocol-https-perl libgd-graph-perl```, RHEL: ```perl-libwww-perl.noarch perl-LWP-Protocol-https.noarch perl-GDGraph```)
 
 Dependencies will be installed during the progress, but installing them on your own is advised.
 
 ## Installation
 
-* Download and run ````install.sh````
-* OPTIONAL: Log in to Webmin and install the CSF module from /usr/local/csf/csfwebmin.tgz
+* Download and run ```csf_installer.sh install```
+* Webmin module will be installed automatically if Webmin is installed.
+  * **Not currently tested**
+  Script command which will run: ```/usr/share/webmin/install-module.pl /usr/local/csf/csfwebmin.tgz```
+* For manually installing the module: Log in to Webmin and install the CSF module from /usr/local/csf/csfwebmin.tgz
 
 ### Offline installation
 
-Clone this repository or download ````install.sh```` and download the following file manually into the install script path:
+Clone this repository or download ```csf_installer.sh``` and download the following file manually into the install script path:
 
-[CSF Archive](http://configserver.com/free/csf.tgz)
+[CSF Archive](https://download.configserver.com/csf.tgz)
 
-Run ````install.sh````
+Run ```csf_installer.sh install```
 
+## Uninstallation
 
-You may find some error messages in the log about ````apf````. If you don't know what apf is or you don't have apf installed just ignore these messages.
+* Run ```csf_installer.sh uninstall```
 
-For further info check [Official website](http://configserver.com/cp/csf.html) or [Installation notes](http://configserver.com/free/csf/install.txt)
+You may find some error messages in the log about ```apf```. If you don't know what apf is or you don't have apf installed just ignore these messages.
+
+For further info check [Official website](http://configserver.com/cp/csf.html) or [Installation notes](https://download.configserver.com/csf/install.txt)
+
+[changelog](https://download.configserver.com/csf/changelog.txt)
