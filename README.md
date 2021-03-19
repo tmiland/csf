@@ -26,7 +26,17 @@ Dependencies will be installed during the progress, but installing them on your 
 
 ## Installation
 
-* Download and run ```csf_installer.sh install```
+```bash
+$ wget https://github.com/tmiland/csf/raw/master/csf_installer.sh
+$ chmod +x csf_installer.sh
+$ ./csf_installer.sh install
+```
+Or directly
+
+```bash
+$ curl -sSL https://github.com/tmiland/csf/raw/master/csf_installer.sh | bash
+```
+
 * Webmin module will be installed automatically if Webmin is installed.
   * **Not currently tested**
   Script command which will run: ```/usr/share/webmin/install-module.pl /usr/local/csf/csfwebmin.tgz```
@@ -53,3 +63,23 @@ For further info check [Official website](http://configserver.com/cp/csf.html) o
 ## Credits
 
 Forked from [installation](https://github.com/installation/csf)
+
+## Donations 
+- [PayPal me](https://paypal.me/milanddata)
+- [BTC] : 33mjmoPxqfXnWNsvy8gvMZrrcG3gEa3YDM
+
+## Web Hosting
+
+Sign up for web hosting using this link, and receive $100 in credit over 60 days.
+
+[DigitalOcean](https://m.do.co/c/f1f2b475fca0)
+
+#### Disclaimer 
+
+*** ***Use at own risk*** ***
+
+### License
+
+[![MIT License Image](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/220px-MIT_logo.svg.png)](https://github.com/tmiland/csf/blob/master/LICENSE)
+
+[MIT License](https://github.com/tmiland/csf/blob/master/LICENSE)
