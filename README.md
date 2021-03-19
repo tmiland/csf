@@ -29,7 +29,7 @@ Dependencies will be installed during the progress, but installing them on your 
 ```bash
 $ wget https://github.com/tmiland/csf/raw/master/csf_installer.sh
 $ chmod +x csf_installer.sh
-$ ./csf_installer.sh install
+$ ./csf_installer.sh --install
 ```
 
 * Webmin module will be installed automatically if Webmin is installed.
@@ -43,11 +43,11 @@ Clone this repository or download ```csf_installer.sh``` and download the follow
 
 [CSF Archive](https://download.configserver.com/csf.tgz)
 
-Run ```csf_installer.sh install```
+Run ```csf_installer.sh --install```
 
 ## Uninstallation
 
-* Run ```csf_installer.sh uninstall```
+* Run ```csf_installer.sh --uninstall```
 
 You may find some error messages in the log about ```apf```. If you don't know what apf is or you don't have apf installed just ignore these messages.
 
