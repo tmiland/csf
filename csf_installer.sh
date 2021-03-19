@@ -300,10 +300,10 @@ uninstall() {
 }
 
 case "$1" in
-  install)
+  --install|-i)
     csf_install
     ;;
-  uninstall)
+  --uninstall|-u)
     uninstall
     ;;
   *)
