@@ -191,12 +191,12 @@ csf_install() {
   if [ "$(which curl 2> /dev/null)" ]; then
     download="$(which curl) -s -O"
   elif [ "$(which wget 2> /dev/null)" ]; then
-    download="$(which wget) --no-certificate"
+    download="$(which wget) --no-check-certificate"
   elif [ "$(which fetch 2> /dev/null)" ]; then
     download="$(which fetch)"
   else
     dep "wget"
-    download="$(which wget) --no-certificate"
+    download="$(which wget) --no-check-certificate"
     e "No HTTP client found, wget added to dependencies" 31
   fi
 
