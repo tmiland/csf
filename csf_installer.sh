@@ -257,7 +257,7 @@ csf_install() {
   if [ -f $DIR/csf.tgz ]; then
     cp -r $DIR/csf.tgz $TMP
   else
-    download https://download.configserver.com/csf.tgz "CSF files"
+    download https://download.configserver.dev/csf.tgz "CSF files"
   fi
   tar -xzf csf.tgz >> $INSTALL_LOG 2>> $ERROR_LOG
 
@@ -289,7 +289,7 @@ csf_install() {
   fi
 
   e "Installation done."
-	e "For instructions, see readme: https://download.configserver.com/csf/readme.txt"
+	e "For instructions, see readme: https://docs.configserver.dev/install/quickstart/install"
 }
 
 uninstall() {
